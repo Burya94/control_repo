@@ -1,5 +1,5 @@
 region = "us-east-1"
-instance_key_name = "els-srch-vi-prod-key"
+instance_key_name = "puppet"#"els-srch-vi-prod-key"
 s3_tfstate_bucket_name = "els-srch-vi-tfstate"
 res_nameprefix = "els-srch-vi-"
 pub_sn_netnumber = "23"
