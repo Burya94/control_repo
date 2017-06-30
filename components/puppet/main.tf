@@ -18,10 +18,9 @@ data "terraform_remote_state" "vpc" {
 }
 
 module "puppet" {
-  source    = "../../../tf_puppet"
-  #source    = "git@github.com:Burya94/tf_puppetmaster.git?ref=dev"
+  source    = "git@github.com:Burya94/tf_puppetmaster.git"
   region    = "${data.terraform_remote_state.vpc.region}"
-  key_name  = "puppet"
-  instype   = "t2.micro"
-  subnet_id = "${data.terraform_remote_state.vpc.vpc_netprefix}.${data.terraform_remote_state.vpc.vpc_netnumber}/${data.terraform_remote_state.vpc.vpc_netmask}"
+  key_name  = "${var.instance_key_name}"
+  instype   = "${var.instance_type}"
+  subnet_id = "${data.terraform_remote_state.vpc.pub_sn_ids[0]}"
 }
