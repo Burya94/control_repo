@@ -9,7 +9,7 @@ terraform {
 }
 
 module "vpc" {
-    source = "git::ssh://git@git.epam.com/Vitalii_Ielakov/tf_vpc.git"
+    source = "git@github.com:Burya94/tf_vpc.git"
     aws_access_key = "${var.aws_access_key}"
     aws_secret_key = "${var.aws_secret_key}"
     res_nameprefix = "${var.res_nameprefix}"

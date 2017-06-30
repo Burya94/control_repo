@@ -18,7 +18,7 @@ data "terraform_remote_state" "vpc" {
 }
 
 module "nat" {
-    source = "git::ssh://git@git.epam.com/Vitalii_Ielakov/tf_nat.git"
+    source = "git@github.com:Burya94/tf_nat.git"
     aws_access_key = "${var.aws_access_key}"
     aws_secret_key = "${var.aws_secret_key}"
     res_nameprefix = "${data.terraform_remote_state.vpc.res_nameprefix}"
