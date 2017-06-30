@@ -1,3 +1,3 @@
-bucket = "bucket_vpc_puppet"
+bucket = "elssrchvitfstate"
 key = "dev/vpc/terraform.tfstate"
 region = "us-east-1"
