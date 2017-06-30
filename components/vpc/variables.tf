@@ -1,5 +1,5 @@
-variable "aws_access_key" {default = "AKIAIV4ROT3BT4ZUWTOQ"}
-variable "aws_secret_key" {default = "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"}
+variable "aws_access_key" {}
+variable "aws_secret_key" {}
 variable "region" {
         default = "us-east-1"
 }
