@@ -1,3 +1,3 @@
 bucket = "puppet_bucket_test"
-key = "dev/vpc/terraform.tfstate"
+key = "dev/puppet_agent/terraform.tfstate"
 region = "us-east-1"
