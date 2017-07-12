@@ -32,7 +32,7 @@ module "puppet_agent" {
   key_name         = "${var.instance_key_name}"
   instype          = "${var.instance_type}"
   subnet_id        = "${data.terraform_remote_state.vpc.pub_sn_ids[0]}"
-  env              = "${var.env}"
+  environment      = "${var.env}"
   puppetmaster_dns = "${data.terraform_remote_state.puppet.private_dns}"
 
 }
