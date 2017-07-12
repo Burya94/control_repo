@@ -17,8 +17,17 @@ data "terraform_remote_state" "vpc" {
     }
 }
 
+data "terraform_remote_state" "puppet" {
+  backend = "s3"
+  config {
+    bucket = "${var.s3_tfstate_bucket_name}"
+    key    = "${var.s3_tfstate_bucket_puppet_key}"
+    region = "${var.region}"
+  }
+}
+
 module "nat" {
-    source = "git@github.com:Burya94/tf_nat.git"
+    source = "git@github.com:Burya94/tf_nat.git?ref=dev"
     aws_access_key = "${var.aws_access_key}"
     aws_secret_key = "${var.aws_secret_key}"
     res_nameprefix = "${data.terraform_remote_state.vpc.res_nameprefix}"
@@ -33,4 +42,5 @@ module "nat" {
     nat_instance_key_name = "${var.instance_key_name}"
     priv_sn_netnumber = "${var.priv_sn_netnumber}"
     priv_sn_netmask = "${var.priv_sn_netmask}"
+    puppetmaster_dns = "${data.terraform_remote_state.puppet.private_dns}"
 }

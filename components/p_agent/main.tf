@@ -27,11 +27,12 @@ data "terraform_remote_state" "puppet" {
 }
 
 module "puppet_agent" {
-  source    = "git@github.com:Burya94/tf_puppetagent.git?ref=dev"
-  region    = "${data.terraform_remote_state.vpc.region}"
-  key_name  = "${var.instance_key_name}"
-  instype   = "${var.instance_type}"
-  subnet_id = "${data.terraform_remote_state.vpc.pub_sn_ids[0]}"
+  source           = "git@github.com:Burya94/tf_puppetagent.git?ref=dev"
+  region           = "${data.terraform_remote_state.vpc.region}"
+  key_name         = "${var.instance_key_name}"
+  instype          = "${var.instance_type}"
+  subnet_id        = "${data.terraform_remote_state.vpc.pub_sn_ids[0]}"
+  env              = "${var.env}"
   puppetmaster_dns = "${data.terraform_remote_state.puppet.private_dns}"
 
 }

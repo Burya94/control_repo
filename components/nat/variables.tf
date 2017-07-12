@@ -3,6 +3,7 @@ variable "aws_secret_key" {}
 variable "region" {}
 variable "s3_tfstate_bucket_name" {}
 variable "s3_tfstate_bucket_vpc_key" {}
+variable "s3_tfstate_bucket_puppet_key" {}
 variable "instance_key_name" {}
 variable "priv_sn_netnumber" {}
 variable "priv_sn_netmask" {}

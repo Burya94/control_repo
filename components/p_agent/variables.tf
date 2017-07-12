@@ -10,3 +10,4 @@ variable "instance_key_name" {}
 variable "priv_sn_netnumber" {}
 variable "priv_sn_netmask" {}
 variable "instance_type" {default = "t2.micro"}
+variable "env" {}
