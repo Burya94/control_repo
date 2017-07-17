@@ -9,7 +9,7 @@ terraform {
 }
 
 module "vpc" {
-    source = "git@github.com:Burya94/tf_vpc.git"
+    source = "git@github.com:Burya94/tf_vpc.git?ref=dev"
     aws_access_key = "${var.aws_access_key}"
     aws_secret_key = "${var.aws_secret_key}"
     res_nameprefix = "${var.res_nameprefix}"
@@ -20,4 +20,7 @@ module "vpc" {
     vpc_netprefix = "${var.vpc_netprefix}"
     pub_sn_netnumber = "${var.pub_sn_netnumber}"
     pub_sn_netmask = "${var.pub_sn_netmask}"
+    priv_sn_netnumber = "${var.priv_sn_netnumber}"
+    priv_sn_netmask = "${var.priv_sn_netmask}"
+
 }

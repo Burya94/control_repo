@@ -12,3 +12,5 @@ variable "vpc_netnumber" {
 variable "vpc_netprefix" {}
 variable "pub_sn_netnumber" {}
 variable "pub_sn_netmask" {}
+variable "priv_sn_netnumber" {}
+variable "priv_sn_netmask" {} 
