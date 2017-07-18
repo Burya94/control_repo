@@ -22,5 +22,7 @@ module "vpc" {
     pub_sn_netmask = "${var.pub_sn_netmask}"
     priv_sn_netnumber = "${var.priv_sn_netnumber}"
     priv_sn_netmask = "${var.priv_sn_netmask}"
+    instance_key_name = "${var.instance_key_name}"
+    puppet_addr       = "${var.puppet_addr}"
 
 }

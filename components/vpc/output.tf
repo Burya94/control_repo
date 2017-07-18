@@ -37,3 +37,12 @@ output "pub_sn_netnumber" {
 output "pub_sn_netmask" {
     value = "${module.vpc.pub_sn_netmask}"
 }
+output "priv_sn_ids" {
+  value = "${module.vpc.priv_sn_ids}"
+}
+output "pub_net" {
+  value = "${module.vpc.pub_net}"
+}
+output "priv_sn_azs" {
+    value = "${module.vpc.priv_sn_azs}"
+}

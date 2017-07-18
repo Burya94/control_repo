@@ -44,4 +44,5 @@ module "nat" {
     priv_sn_netmask = "${var.priv_sn_netmask}"
     puppetmaster_dns = "${data.terraform_remote_state.puppet.private_dns}"
     puppet_ip        = "${data.terraform_remote_state.puppet.private_ip}"
+    priv_sn_ids      = "${data.terraform_remote_state.vpc.priv_sn_ids}"
 }

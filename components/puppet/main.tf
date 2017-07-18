@@ -22,5 +22,9 @@ module "puppet" {
   region    = "${data.terraform_remote_state.vpc.region}"
   key_name  = "${var.instance_key_name}"
   instype   = "${var.instance_type}"
-  subnet_id = "${data.terraform_remote_state.vpc.pub_sn_ids[0]}"
+  subnet_id = "${data.terraform_remote_state.vpc.priv_sn_ids}"
+  pub_net  = "${data.terraform_remote_state.vpc.pub_net}"
+  vpc_id    = "${data.terraform_remote_state.vpc.vpc_id}"
+  vpc_netprefix = "${data.terraform_remote_state.vpc.vpc_netprefix}"
+  priv_sn_netnumber = "${var.priv_sn_netnumber}"
 }

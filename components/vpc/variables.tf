@@ -13,4 +13,8 @@ variable "vpc_netprefix" {}
 variable "pub_sn_netnumber" {}
 variable "pub_sn_netmask" {}
 variable "priv_sn_netnumber" {}
-variable "priv_sn_netmask" {} 
+variable "priv_sn_netmask" {}
+variable "instance_key_name" {}
+variable "puppet_addr"{
+  default = "10"
+}
