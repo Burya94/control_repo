@@ -27,4 +27,5 @@ module "puppet" {
   vpc_id    = "${data.terraform_remote_state.vpc.vpc_id}"
   vpc_netprefix = "${data.terraform_remote_state.vpc.vpc_netprefix}"
   priv_sn_netnumber = "${var.priv_sn_netnumber}"
+  priv_sn_netmask     = "${var.priv_sn_netmask}"
 }
