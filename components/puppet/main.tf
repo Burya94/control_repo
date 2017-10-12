@@ -18,7 +18,7 @@ data "terraform_remote_state" "vpc" {
 }
 
 module "puppet" {
-  source    = "git@github.com:Burya94/tf_puppetmaster.git?ref=master"
+  source    = "git@github.com:Burya94/tf_puppetmaster.git?ref=dev"
   region    = "${data.terraform_remote_state.vpc.region}"
   key_name  = "${var.instance_key_name}"
   instype   = "${var.instance_type}"

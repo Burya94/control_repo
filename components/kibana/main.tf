@@ -26,16 +26,18 @@ data "terraform_remote_state" "puppet" {
   }
 }
 
-module "zookeeper" {
-  source           = "git@github.com:Burya94/tf_zookeeper.git?ref=dev"
+module "kibana" {
+  source           = "git@github.com:Burya94/tf_kibana.git?ref=master"
   key_name         = "${var.instance_key_name}"
   instype          = "${var.instance_type}"
-  subnet_id        = "${data.terraform_remote_state.vpc.priv_sn_ids}"
-  environment      = "${var.env}"
-  puppetmaster_dns = "${data.terraform_remote_state.puppet.private_dns}"
+  vpc_id           = "${data.terraform_remote_state.vpc.vpc_id}"
+  subnet_id        = "${data.terraform_remote_state.vpc.pub_sn_ids}"
+  dns_name         = "${data.terraform_remote_state.puppet.private_dns}"
   puppet_ip        = "${data.terraform_remote_state.puppet.private_ip}"
-  sec_group        = "${data.terraform_remote_state.puppet.sec_group}"
-  s3_tfstate_bucket_name = "${var.s3_tfstate_bucket_name}"
-  stream_name        = "${var.stream_name}"
-  account_id       = "${var.account_id}"
+  priv_sn_netnumber = "${var.priv_sn_netnumber}"
+  priv_sn_netmask = "${var.priv_sn_netmask}"
+  pub_sn_netmask    = "${var.pub_sn_netmask}"
+
+
+
 }

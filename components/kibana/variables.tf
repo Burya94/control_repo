@@ -9,9 +9,6 @@ variable "s3_tfstate_bucket_puppet_key" { default = "dev/puppet/terraform.tfstat
 variable "instance_key_name" {}
 variable "priv_sn_netnumber" {}
 variable "priv_sn_netmask" {}
+variable "pub_sn_netmask"{}
 variable "instance_type" {default = "t2.micro"}
 variable "env" {}
-variable "stream_name" {
-    default = "els-srch-vi-test"
-}
-variable "account_id" {}
